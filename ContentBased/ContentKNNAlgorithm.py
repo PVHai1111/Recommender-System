@@ -61,19 +61,6 @@ class ContentKNNAlgorithm(AlgoBase):
         diff = abs(years[movie1] - years[movie2])
         sim = math.exp(-diff / 10.0)
         return sim
-    
-    def computeMiseEnSceneSimilarity(self, movie1, movie2, mes):
-        mes1 = mes[movie1]
-        mes2 = mes[movie2]
-        if (mes1 and mes2):
-            shotLengthDiff = math.fabs(mes1[0] - mes2[0])
-            colorVarianceDiff = math.fabs(mes1[1] - mes2[1])
-            motionDiff = math.fabs(mes1[3] - mes2[3])
-            lightingDiff = math.fabs(mes1[5] - mes2[5])
-            numShotsDiff = math.fabs(mes1[6] - mes2[6])
-            return shotLengthDiff * colorVarianceDiff * motionDiff * lightingDiff * numShotsDiff
-        else:
-            return 0
 
     def estimate(self, u, i):
 

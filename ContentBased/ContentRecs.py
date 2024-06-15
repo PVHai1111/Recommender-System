@@ -31,7 +31,7 @@ evaluator.AddAlgorithm(contentKNN, "ContentKNN")
 Random = NormalPredictor()
 evaluator.AddAlgorithm(Random, "Random")
 
-evaluator.Evaluate(False)
+evaluator.Evaluate(True)
 
 evaluator.SampleTopNRecs(ml)
 

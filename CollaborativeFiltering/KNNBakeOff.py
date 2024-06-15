@@ -36,6 +36,6 @@ Random = NormalPredictor()
 evaluator.AddAlgorithm(Random, "Random")
 
 # Fight!
-evaluator.Evaluate(False)
+evaluator.Evaluate(True)
 
 evaluator.SampleTopNRecs(ml)
