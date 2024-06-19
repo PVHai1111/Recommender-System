@@ -11,6 +11,7 @@
 ```bash
 $ pip install numpy
 $ pip install scikit-surprise
+```
 
 ## Nguồn tham khảo:
 https://surpriselib.com/
