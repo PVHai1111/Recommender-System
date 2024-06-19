@@ -37,13 +37,13 @@ k = 10
 for uiid in range(trainSet.n_users):
     # Get top N similar users to this one
     similarityRow = simsMatrix[uiid]
+    
     similarUsers = []
     for innerID, score in enumerate(similarityRow):
         if (innerID != uiid):
-           similarUsers.append( (innerID, score) )
+            similarUsers.append( (innerID, score) )
     
-    userRatings = trainSet.ur[uiid]
-    kNeighbors = heapq.nlargest(k, userRatings, key=lambda t: t[1])
+    kNeighbors = heapq.nlargest(k, similarUsers, key=lambda t: t[1])
     
     # Get the stuff they rated, and add up ratings for each item, weighted by user similarity
     candidates = defaultdict(float)
@@ -53,12 +53,7 @@ for uiid in range(trainSet.n_users):
         theirRatings = trainSet.ur[innerID]
         for rating in theirRatings:
             candidates[rating[0]] += (rating[1] / 5.0) * userSimilarityScore
-    
-    for itemID, rating in kNeighbors:
-        similarityRow = simsMatrix[itemID]
-        for innerID, score in enumerate(similarityRow):
-            candidates[innerID] += score * (rating / 5.0)
-    
+        
     # Build a dictionary of stuff the user has already seen
     watched = {}
     for itemID, rating in trainSet.ur[uiid]:
@@ -76,5 +71,8 @@ for uiid in range(trainSet.n_users):
     
 # Measure
 print("HR", RecommenderMetrics.HitRate(topN, leftOutTestSet))   
+
+
+
 
 

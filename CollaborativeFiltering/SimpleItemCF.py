@@ -4,7 +4,7 @@ import heapq
 from collections import defaultdict
 from operator import itemgetter
         
-testSubject = '84'
+testSubject = '672'
 k = 10
 
 ml = MovieLens()
