@@ -1,19 +1,19 @@
-# Hệ gợi ý phim
+# Film Recommendation System
 
-## File báo cáo:
+## Report File (in Vietnamese):
 - FinalReport.docx
 
-## File thuyết trình:
+## Presentation Slide (in Vietnamese):
 - FinalSlide.pdf
 
-## Hướng dẫn cài đặt thư viện:
+## Intalling Packages:
 
 ```bash
 $ pip install numpy
 $ pip install scikit-surprise
 ```
 
-## Nguồn tham khảo:
-https://surpriselib.com/
-https://www.sundog-education.com/recsys/
+## Resources:
+* https://surpriselib.com/
+* https://www.sundog-education.com/recsys/
 
